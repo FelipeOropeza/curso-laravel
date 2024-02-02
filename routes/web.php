@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\JogosController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -27,9 +28,7 @@ use Illuminate\Support\Facades\Route;
 //     return view("jogos", ["nomeJogo"=> $name]);
 // })->where('name', '[A-Za-z]+');
 
-Route::get("/jogos", function () {
-    return view('jogos');
-});
+Route::get("/jogos", [JogosController::class, 'index']);
 
 Route::get('/home', function () {
     return view('welcome');
